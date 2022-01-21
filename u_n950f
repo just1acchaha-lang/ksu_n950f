@@ -1,0 +1,91 @@
+[33mcommit 11af8319ade6c3cab1a24a698fc85a299591b986[m[33m ([m[1;36mHEAD -> [m[1;32mksu_n950f[m[33m)[m
+Author: Mohammad Afaneh <mohammad.afaneh92@gmail.com>
+Date:   Fri Dec 18 01:15:31 2020 +0200
+
+    makefile: Do not use samsung default toolchain path
+    
+    Signed-off-by: Shreyash Wasnik <shreyashwasnik112@gmail.com>
+    Signed-off-by: root <root@runnervm1bl6g.localdomain>
+
+[33mcommit a964a5c56e5a57366bf3bab85a72df2b7f585453[m
+Author: Shreyash Wasnik <shreyashwasnik112@gmail.com>
+Date:   Wed Feb 8 23:10:00 2023 +0530
+
+    patch: include GSI patch file
+    
+    Signed-off-by: Shreyash Wasnik <shreyashwasnik112@gmail.com>
+    Signed-off-by: root <root@runnervm1bl6g.localdomain>
+
+[33mcommit 94d425525f04bf0569d8b9ab327a6b409845e84c[m
+Author: Shreyash Wasnik <shreyashwasnik112@gmail.com>
+Date:   Wed Feb 8 23:07:58 2023 +0530
+
+    gitignore: don't ignore .patch file
+    
+    include patch file in commit
+    
+    Signed-off-by: Shreyash Wasnik <shreyashwasnik112@gmail.com>
+    Signed-off-by: root <root@runnervm1bl6g.localdomain>
+
+[33mcommit 0467817e7e7138b4111bf45639933d594aa2502f[m
+Author: Shreyash Wasnik <shreyashwasnik112@gmail.com>
+Date:   Sun Jun 25 10:14:18 2023 +0530
+
+    ci: change build branch to stock_base_13_ack
+    
+    Signed-off-by: Shreyash Wasnik <shreyashwasnik112@gmail.com>
+    Signed-off-by: root <root@runnervm1bl6g.localdomain>
+
+[33mcommit 24a99112b945e35b47aeeb0bb4d138302218a168[m
+Author: Shreyash Wasnik <shreyashwasnik112@gmail.com>
+Date:   Sat Jan 14 15:00:28 2023 +0530
+
+    Circleci: import config file
+    
+    Signed-off-by: Shreyash Wasnik <shreyashwasnik112@gmail.com>
+    
+    ci: fix derp
+    
+    Signed-off-by: Shreyash Wasnik <shreyashwasnik112@gmail.com>
+    Signed-off-by: root <root@runnervm1bl6g.localdomain>
+
+[33mcommit 1c4dc838aa5068229526c94621a38db268f5337a[m
+Author: Shreyash Wasnik <shreyashwasnik112@gmail.com>
+Date:   Sun Jun 25 10:09:22 2023 +0530
+
+    build_menu: adapt build menu to build stock kernel
+    
+    Signed-off-by: Shreyash Wasnik <shreyashwasnik112@gmail.com>
+    Signed-off-by: root <root@runnervm1bl6g.localdomain>
+
+[33mcommit a51adff8c454e761e5e9531ac49d65e927b79e5a[m
+Author: Mohammad Afaneh <mohammad.afaneh92@gmail.com>
+Date:   Wed Jun 9 12:45:23 2021 +0300
+
+    exynos2100: build dtbs
+    
+    r9s
+    
+    Signed-off-by: Shreyash Wasnik <shreyashwasnik112@gmail.com>
+    
+    build_menu:fix colour
+    
+    Signed-off-by: Shreyash Wasnik <shreyashwasnik112@gmail.com>
+    Signed-off-by: root <root@runnervm1bl6g.localdomain>
+
+[33mcommit ccb7ec072b33f16d33ff656ac6a12a24b045c7e5[m
+Author: Mohammad Afaneh <mohammad.afaneh92@gmail.com>
+Date:   Mon Aug 10 12:49:21 2020 +0300
+
+    Add build menu
+    
+    Signed-off-by: Shreyash Wasnik <shreyashwasnik112@gmail.com>
+    Signed-off-by: root <root@runnervm1bl6g.localdomain>
+
+[33mcommit b6997a8827544187a82fa7163e344760523b4744[m[33m ([m[1;31morigin/ksu_n950f[m[33m)[m
+Author: root <root@runnervm1bl6g.localdomain>
+Date:   Fri Jan 16 16:17:47 2026 +0000
+
+    Initial Commit: ksu_n950
+    
+    Signed-off-by: root <root@runnervm1bl6g.localdomain>
