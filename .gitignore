@@ -12,7 +12,10 @@
 .*
 *.o
 *.o.*
+<<<<<<< HEAD
 *.a
+=======
+>>>>>>> 4fbd5c319bb7 (gitignore: don't ignore .patch file)
 *.s
 *.ko
 *.so
