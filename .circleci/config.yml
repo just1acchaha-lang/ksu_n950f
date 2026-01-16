@@ -14,7 +14,6 @@ jobs:
             mkdir predator
             cd predator
             wget https://raw.githubusercontent.com/just1acchaha-lang/android_kernel_samsung_universal8895/refs/heads/lineage-20.0/build_menu
-            bash build_menu
 workflows:
   version: 2.1
   cooking:
