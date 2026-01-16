@@ -6,9 +6,10 @@ DIR="$(pwd)"
 KERNEL_DIR="$DIR/kernel"
 OUT_DIR="$KERNEL_DIR/out"
 ANYKERNEL="$KERNEL_DIR/AnyKernel3"
+# CORRECTED DEFCONFIG NAME
+DEFCONFIG="exynos8895-greatlte_defconfig"
 
 echo "Cloning dependencies for Note 8 (greatlte)"
-# Pulling specifically from your repo
 git clone --depth=1 --branch lineage-20.0 https://github.com/just1acchaha-lang/android_kernel_samsung_universal8895 kernel
 cd kernel 
 
@@ -16,7 +17,6 @@ cd kernel
 git clone --depth=1 --branch android-11.0.0_r48 https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 aarch64-linux-android-4.9
 git clone --depth=1 https://github.com/prorooter007/android_prebuilts_clang_host_linux-x86_clang-6877366 clang-r383902
 git clone --depth=1 https://github.com/osm0sis/AnyKernel3 AnyKernel3
-echo "Done"
 
 # Environment Setup
 export ARCH=arm64
@@ -31,30 +31,33 @@ BRED="\033[1;31m"
 STD="\033[0m"
  
 build_kernel(){  
-  echo -e "${BGREEN}***** Compiling GREATLTE Kernel *****${STD}"
+  echo -e "${BGREEN}***** Compiling for $DEFCONFIG *****${STD}"
   mkdir -p $OUT_DIR
   
-  # Note 8 specific defconfig
-  make -j$(nproc) O=out greatlte_defconfig
+  # Clean and configure using the correct filename
+  make -j$(nproc) O=out clean
+  make -j$(nproc) O=out $DEFCONFIG
+  
+  # Compile
   make -j$(nproc) O=out
 
-  # Check for the correct 8895 output (Image.gz-dtb)
-  if [ -e "out/arch/arm64/boot/Image.gz-dtb" ]; then
-    echo -e "${BGREEN}***** Ready to Package AnyKernel3 *****${STD}"
+  # Check for output
+  if [ -f "out/arch/arm64/boot/Image.gz-dtb" ]; then
+    echo -e "${BGREEN}***** Build Successful! *****${STD}"
     
     cd $ANYKERNEL
     git reset --hard
     cp ../out/arch/arm64/boot/Image.gz-dtb zImage
     
-    # Update AnyKernel3 info
+    # Branding
     sed -i "s/ExampleKernel by osm0sis/Just1Acc-Kernel for Note8/g" anykernel.sh
-    # Set the Note 8 block path
+    # Set the Note 8 block path for LineageOS/AOSP
     sed -i "s|block=/dev/block/td8|block=/dev/block/platform/11120000.ufs/by-name/BOOT|g" anykernel.sh
     
-    zip -r9 "$DIR/Just1Acc-greatlte-kernel.zip" * -x .git README.md *placeholder
-    echo -e "${BGREEN}***** Success! Zip is in the main folder *****${STD}"
+    zip -r9 "$DIR/Just1Acc-Note8-Kernel.zip" * -x .git README.md *placeholder
+    echo -e "${BGREEN}***** Success! Zip: Just1Acc-Note8-Kernel.zip *****${STD}"
   else
-    echo -e "${BRED}***** Build Failed! *****${STD}"
+    echo -e "${BRED}***** Build Failed! Check for errors in the terminal. *****${STD}"
     exit 1
   fi
 }
